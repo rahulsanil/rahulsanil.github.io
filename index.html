@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Resume website for a Product Manager specializing in Enterprise Banking CRM, Lead Management, STP Journeys, API Integrations, Analytics and Automation." />
+  <title>Rahul Umesh Sanil</title>
+  <meta name="description" content="Resume website of a Product Manager specializing in Enterprise Banking CRM, Lead Management, STP Journeys, API Integrations, Analytics and Automation." />
   <style>
     :root {
       --bg: #eef2f7;
@@ -24,13 +25,8 @@
       --radius-sm: 10px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -43,9 +39,7 @@
       line-height: 1.55;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .site-shell {
       width: min(1120px, calc(100% - 32px));
@@ -155,12 +149,11 @@
       grid-template-columns: minmax(0, 1fr) 300px;
       gap: 34px;
       padding: 38px 54px 46px;
+      align-items: start;
     }
 
     .main-column,
-    .side-column {
-      min-width: 0;
-    }
+    .side-column { min-width: 0; }
 
     .section {
       margin: 0 0 30px;
@@ -168,9 +161,7 @@
       page-break-inside: avoid;
     }
 
-    .section:last-child {
-      margin-bottom: 0;
-    }
+    .section:last-child { margin-bottom: 0; }
 
     .section-heading {
       display: flex;
@@ -258,21 +249,13 @@
       box-shadow: 0 0 0 3px var(--blue-soft);
     }
 
-    .bullet-list li:last-child {
-      margin-bottom: 0;
-    }
-
     .role {
       position: relative;
-      padding: 0 0 24px 24px;
+      padding: 0 0 24px 22px;
       border-left: 2px solid var(--soft-line);
-      break-inside: avoid;
-      page-break-inside: avoid;
     }
 
-    .role:last-child {
-      padding-bottom: 0;
-    }
+    .role:last-child { padding-bottom: 0; }
 
     .role::before {
       content: "";
@@ -281,51 +264,41 @@
       top: 4px;
       width: 12px;
       height: 12px;
-      border: 2px solid var(--blue);
       border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 0 4px var(--blue-soft);
+      background: var(--gold);
+      box-shadow: 0 0 0 4px #fff2d7;
     }
 
     .role-header {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 14px;
-      align-items: start;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: baseline;
       margin-bottom: 9px;
     }
 
-    .role-title {
+    .company-title {
       margin: 0;
       color: var(--navy);
       font-size: 16px;
-      line-height: 1.28;
+      line-height: 1.3;
       font-weight: 850;
     }
 
-    .role-title span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 750;
-    }
-
-    .date-pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: var(--blue-soft);
+    .date-range {
       color: var(--blue);
-      font-size: 12px;
-      font-weight: 850;
+      font-size: 13px;
+      font-weight: 800;
       white-space: nowrap;
     }
 
+    .side-column {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+    }
+
     .side-card {
-      margin-bottom: 22px;
       padding: 18px;
       border: 1px solid var(--soft-line);
       border-radius: var(--radius-md);
@@ -335,26 +308,36 @@
       page-break-inside: avoid;
     }
 
-    .side-card:last-child {
-      margin-bottom: 0;
+    .side-card + .side-card { margin-top: 18px; }
+    
+    .section-heading::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--gold);
+      flex: 0 0 auto;
     }
 
-    .side-card .section-heading {
-      margin-bottom: 13px;
+    .side-heading {
+      margin: 0 0 14px;
+      color: var(--navy);
       font-size: 12px;
-      letter-spacing: 0.12em;
+      line-height: 1.2;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
-    .side-card .section-heading::before {
-      width: 22px;
-    }
+    .skill-group + .skill-group { margin-top: 16px; }
 
-    .skill-group {
-      margin-bottom: 16px;
-    }
-
-    .skill-group:last-child {
-      margin-bottom: 0;
+    .skill-title {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 12.5px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .skill-group-title {
@@ -372,7 +355,17 @@
       gap: 7px;
     }
 
-    .tag {
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chip-list li {
       display: inline-flex;
       align-items: center;
       padding: 5px 8px;
@@ -386,403 +379,281 @@
     }
 
     .education-item {
-      margin: 0 0 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--soft-line);
+      margin: 0;
+      padding: 12px 0;
+      border-top: 1px solid var(--soft-line);
     }
 
-    .education-item:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
+    .education-item:first-of-type {
+      padding-top: 0;
+      border-top: 0;
     }
 
     .education-item strong {
       display: block;
       color: var(--navy);
-      font-size: 14px;
+      font-size: 13.5px;
+      line-height: 1.3;
     }
 
     .education-item span {
+      display: block;
+      margin-top: 3px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12.5px;
     }
 
-    .print-note {
-      margin: 16px auto 0;
-      color: var(--muted-2);
-      text-align: center;
+    .note {
+      max-width: 850px;
+      margin: 14px auto 0;
+      color: #64748b;
       font-size: 12px;
+      text-align: center;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
+      .site-shell { width: min(100% - 22px, 1120px); }
+      .resume-header { padding: 34px 34px 28px; }
+      .resume-body {
+        grid-template-columns: minmax(0, 1fr) 260px;
+        gap: 24px;
+        padding: 34px;
+      }
+      .impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* Mobile keeps the skills and education rail on the right instead of pushing it to the bottom. */
+    @media (max-width: 700px) {
+      body { font-size: 12.6px; line-height: 1.42; }
       .site-shell {
         width: 100%;
         margin: 0;
       }
-
-      .toolbar,
-      .print-note {
-        display: none;
-      }
-
+      .toolbar { display: none; }
       .resume {
         border: 0;
         border-radius: 0;
         box-shadow: none;
       }
-
-      .resume-header,
-      .resume-body {
-        padding-left: 24px;
-        padding-right: 24px;
+      .resume-header {
+        padding: 24px 18px 20px;
       }
-
-      .resume-body {
-        grid-template-columns: 1fr;
+      .candidate-name {
+        font-size: clamp(22px, 7vw, 30px);
+        letter-spacing: 0.02em;
       }
-
+      .headline { font-size: 12.5px; }
+      .contact-line { font-size: 12px; gap: 5px 9px; }
+      .contact-line span:not(:last-child)::after {
+        width: 3px;
+        height: 3px;
+        margin-left: 9px;
+      }
+      .resume-body {
+        grid-template-columns: minmax(0, 1fr) minmax(132px, 38vw);
+        gap: 12px;
+        padding: 20px 14px 26px;
+      }
+      .side-column {
+        position: static;
+        top: auto;
+      }
+      .section { margin-bottom: 22px; }
+      .section-heading {
+        gap: 8px;
+        margin-bottom: 11px;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+      }
+      .section-heading::before { width: 20px; }
+      .summary-card {
+        padding: 12px;
+        border-radius: 11px;
+      }
       .impact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
       }
-    }
-
-    @media (max-width: 540px) {
-      body {
-        font-size: 14px;
+      .impact-card { padding: 9px 8px; }
+      .impact-number { font-size: 15px; }
+      .impact-label { font-size: 9.8px; }
+      .bullet-list li {
+        margin-bottom: 8px;
+        padding-left: 14px;
       }
-
-      .resume-header {
-        padding-top: 32px;
+      .bullet-list li::before {
+        width: 5px;
+        height: 5px;
+        box-shadow: none;
       }
-
-      .contact-line {
-        display: block;
+      .role {
+        padding-left: 14px;
+        padding-bottom: 18px;
       }
-
-      .contact-line span {
-        display: block;
-        margin-top: 5px;
-      }
-
-      .contact-line span:not(:last-child)::after {
-        display: none;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
-
       .role-header {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 2px;
+        margin-bottom: 6px;
       }
+      .role::before {
+        left: -5px;
+        width: 9px;
+        height: 9px;
+        box-shadow: 0 0 0 2px #fff2d7;
+      }
+      .company-title { font-size: 12.4px; }
+      .date-range {
+        font-size: 10.6px;
+        white-space: normal;
+      }
+      .side-card {
+        padding: 12px 10px;
+        border-radius: 12px;
+      }
+      .side-card + .side-card { margin-top: 12px; }
+      .side-heading {
+        margin-bottom: 10px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+      }
+      .skill-group + .skill-group { margin-top: 12px; }
+      .skill-title {
+        margin-bottom: 6px;
+        font-size: 10.8px;
+      }
+      .chip-list { gap: 5px; }
+      .chip-list li {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 4px 6px;
+        border-radius: 8px;
+        font-size: 9.7px;
+        line-height: 1.25;
+      }
+      .education-item { padding: 9px 0; }
+      .education-item strong { font-size: 10.8px; }
+      .education-item span { font-size: 9.8px; }
+      .note { display: none; }
+    }
 
-      .date-pill {
-        justify-self: start;
+    @media (max-width: 390px) {
+      .resume-body {
+        grid-template-columns: minmax(0, 1fr) 122px;
+        gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
+      body { font-size: 12px; }
+      .company-title { font-size: 12px; }
+      .side-card { padding: 10px 8px; }
+      .chip-list li { font-size: 9.2px; }
     }
 
     @media print {
-      :root {
-        --bg: #ffffff;
-        --paper: #ffffff;
-        --ink: #111827;
-        --muted: #374151;
-        --line: #cbd5e1;
-        --soft-line: #d9dee8;
-        --blue: #0f3f6f;
-        --blue-soft: #ffffff;
-        --card: #ffffff;
-        --shadow: none;
-      }
-
-      @page {
-        size: A4;
-        margin: 12mm 11mm;
-      }
-
-      html,
+      :root { --bg: #ffffff; }
+      @page { size: A4; margin: 8mm; }
       body {
-        width: 210mm;
-        min-height: 297mm;
-        background: #ffffff !important;
+        background: #ffffff;
+        font-size: 9.7px;
+        line-height: 1.21;
       }
-
-      body {
-        font-size: 10.6px;
-        line-height: 1.32;
-        color: #111827;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
       .site-shell {
         width: 100%;
         margin: 0;
       }
-
       .toolbar,
-      .print-note {
-        display: none !important;
-      }
-
+      .note { display: none !important; }
       .resume {
         border: 0;
         border-radius: 0;
         box-shadow: none;
-        overflow: visible;
       }
-
       .resume-header {
-        padding: 0 0 9px;
-        color: #111827;
-        background: #ffffff !important;
-        border-bottom: 2px solid #0f3f6f;
+        padding: 13px 18px 11px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
-
-      .resume-header::after {
-        display: none;
-      }
-
-      .eyebrow {
-        display: none;
-      }
-
-      .candidate-name {
-        color: #111827;
-        text-align: center;
-        font-size: 18px;
-        letter-spacing: 0.06em;
-      }
-
-      .headline {
-        margin: 5px auto 0;
-        max-width: none;
-        color: #0f3f6f;
-        text-align: center;
-        font-size: 10.6px;
-        font-weight: 750;
-      }
-
-      .contact-line {
-        display: block;
-        margin-top: 4px;
-        color: #374151;
-        text-align: center;
-        font-size: 10px;
-      }
-
-      .contact-line span {
-        display: inline;
-      }
-
-      .contact-line span:not(:last-child)::after {
-        content: " | ";
-        display: inline;
-        width: auto;
-        height: auto;
-        margin-left: 6px;
-        color: #6b7280;
-        background: transparent;
-        border-radius: 0;
-      }
-
+      .eyebrow { margin-bottom: 5px; font-size: 9px; }
+      .candidate-name { font-size: 21px; line-height: 1; }
+      .headline { font-size: 10.2px; margin-top: 7px; }
+      .contact-line { font-size: 9.4px; margin-top: 6px; }
       .resume-body {
-        display: block;
-        padding: 11px 0 0;
+        grid-template-columns: minmax(0, 1fr) 218px;
+        gap: 15px;
+        padding: 13px 18px 0;
+        align-items: start;
       }
+      .side-column { position: static; }
 
-      .main-column,
-      .side-column {
-        width: 100%;
-      }
-
-      .section,
-      .side-card {
+      /* Print fix: allow Work Experience to begin on page 1 instead of being moved as one unbreakable block. */
+      .section {
         margin-bottom: 10px;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: #ffffff;
-        box-shadow: none;
+        break-inside: auto;
+        page-break-inside: auto;
       }
-
-      .section-heading,
-      .side-card .section-heading {
-        display: block;
-        margin: 0 0 5px;
-        padding: 4px 6px;
-        border-top: 1px solid #cbd5e1;
-        border-bottom: 1px solid #cbd5e1;
-        background: #f4f6f9;
-        color: #111827;
-        font-size: 10px;
-        letter-spacing: 0.12em;
+      #executive-summary,
+      #career-highlights,
+      .side-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
-
-      .section-heading::before,
-      .side-card .section-heading::before {
-        display: none;
+      #work-experience {
+        break-before: auto;
+        page-break-before: auto;
+        break-inside: auto;
+        page-break-inside: auto;
       }
-
-      .summary-card {
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
-        background: #ffffff;
-      }
-
-      .impact-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 4px;
-        margin-top: 7px;
-      }
-
-      .impact-card {
-        padding: 5px 5px;
-        border: 1px solid #d9dee8;
-        border-radius: 0;
-        background: #ffffff;
-      }
-
-      .impact-number {
-        color: #111827;
-        font-size: 11.2px;
-      }
-
-      .impact-label {
-        margin-top: 2px;
-        color: #374151;
-        font-size: 8.8px;
-        line-height: 1.16;
-      }
-
-      .bullet-list li {
-        margin-bottom: 4.3px;
-        padding-left: 12px;
-      }
-
-      .bullet-list li::before {
-        top: 0.55em;
-        width: 3.5px;
-        height: 3.5px;
-        box-shadow: none;
-        background: #111827;
-      }
-
       .role {
-        padding: 0 0 7px 0;
-        border-left: 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
-
-      .role::before {
-        display: none;
-      }
-
-      .role-header {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 8px;
-        margin-bottom: 3px;
-      }
-
-      .role-title {
-        font-size: 10.7px;
-        line-height: 1.2;
-      }
-
-      .role-title span {
-        display: inline;
-        color: #111827;
-        font-size: 10.7px;
-      }
-
-      .role-title span::before {
-        content: " | ";
-        color: #6b7280;
-      }
-
-      .date-pill {
-        min-height: 0;
-        padding: 0;
-        border-radius: 0;
-        background: transparent;
-        color: #374151;
-        font-size: 9.8px;
-      }
-
-      .side-column {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .skill-group {
+      .section-heading {
         margin-bottom: 5px;
+        font-size: 9.4px;
+        letter-spacing: 0.1em;
       }
-
-      .skill-group-title {
-        display: inline;
-        margin: 0;
-        font-size: 9.7px;
-        letter-spacing: 0;
-        text-transform: none;
+      .section-heading::before { width: 24px; }
+      .summary-card,
+      .side-card,
+      .impact-card {
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
-
-      .skill-tags {
-        display: inline;
-      }
-
-      .tag {
-        display: inline;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        color: #111827;
-        font-size: 9.7px;
-        font-weight: 500;
-      }
-
-      .tag:not(:last-child)::after {
-        content: ", ";
-      }
-
-      .education-item {
-        display: inline;
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
-
-      .education-item + .education-item::before {
-        content: " | ";
-      }
-
-      .education-item strong,
-      .education-item span {
-        display: inline;
-        color: #111827;
-        font-size: 9.8px;
-      }
+      .summary-card { padding: 7px 9px; }
+      .impact-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin-top: 7px; }
+      .impact-card { padding: 5px 6px; }
+      .impact-number { font-size: 12.2px; }
+      .impact-label { margin-top: 2px; font-size: 7.4px; line-height: 1.17; }
+      .role { padding-left: 17px; padding-bottom: 8px; }
+      .role-header { margin-bottom: 4px; gap: 8px; }
+      .role::before { width: 9px; height: 9px; left: -5.5px; box-shadow: 0 0 0 2px #fff2d7; }
+      .company-title { font-size: 10.5px; line-height: 1.18; }
+      .date-range { font-size: 8.7px; }
+      .bullet-list li { margin-bottom: 3.6px; padding-left: 13px; }
+      .bullet-list li::before { width: 4.5px; height: 4.5px; top: 0.58em; box-shadow: none; }
+      .side-card { padding: 8px 9px; }
+      .side-card + .side-card { margin-top: 7px; }
+      .side-heading { font-size: 8.8px; margin-bottom: 6px; letter-spacing: 0.12em; }
+      .skill-group + .skill-group { margin-top: 6px; }
+      .skill-title { font-size: 8.9px; margin-bottom: 4px; }
+      .chip-list { gap: 3px; }
+      .chip-list li { padding: 2px 5px; font-size: 7.25px; line-height: 1.15; }
+      .education-item { padding: 5px 0; }
+      .education-item strong { font-size: 8.8px; }
+      .education-item span { font-size: 7.9px; }
     }
   </style>
 </head>
 <body>
   <main class="site-shell">
-    <div class="toolbar" aria-label="Resume actions">
-    </div>
 
     <article class="resume" aria-label="Resume">
       <header class="resume-header">
         <h1 class="candidate-name">Rahul Umesh Sanil</h1>
         <p class="headline">Product Manager - Enterprise Banking CRM | Lead Management | STP Journeys | API Integrations | Analytics &amp; Automation</p>
-        <p class="contact-line">
-          <span>9867101139</span>
-	  <span><a href="mailto:rahulsanil@gmail.com">rahulsanil@gmail.com</a></span>
-          <span><a href="https://rahulsanil.github.io">rahulsanil.github.io</a></span>
-        </p>
+        <p class="contact-line"><span>9867101139</span><span><a href="mailto:rahulsanil@gmail.com">rahulsanil@gmail.com</a></span>
+	<span><a href="https://rahulsanil.github.io">rahulsanil.github.io</a></span></p>
       </header>
 
       <div class="resume-body">
@@ -790,12 +661,11 @@
           <section class="section" id="executive-summary">
             <p class="summary-card">Product Manager specializing in Enterprise Banking CRM, with 15+ years of experience across banking, NBFC, digital journeys, analytics, BI automation and regulatory reporting. Currently contributing to roadmap, prioritization and delivery for YES Genie, YES Bank’s in-house Enterprise CRM platform used by approximately 28,000 monthly active users across 1,000 branches and 50 business units. Experienced in lead management, customer servicing, STP journeys, API integrations, dashboards, UAT, go-live support and post-launch adoption tracking. Strong background in SQL, SAS, SAP BO, automation and data-driven product delivery.</p>
 
-            <div class="impact-grid" aria-label="Resume impact metrics">
-              <div class="impact-card"><span class="impact-number">15+ yrs</span><span class="impact-label">Banking, CRM, analytics and reporting</span></div>
-              <div class="impact-card"><span class="impact-number">~28K</span><span class="impact-label">YES Genie monthly active users</span></div>
-              <div class="impact-card"><span class="impact-number">~1,000</span><span class="impact-label">Branches supported</span></div>
-              <div class="impact-card"><span class="impact-number">~50</span><span class="impact-label">Business units enabled</span></div>
-              <div class="impact-card"><span class="impact-number">70+</span><span class="impact-label">Reporting workflows automated</span></div>
+            <div class="impact-grid" aria-label="Selected career metrics">
+              <div class="impact-card"><span class="impact-number">15+ yrs</span><span class="impact-label">Banking, CRM, analytics and automation experience</span></div>
+              <div class="impact-card"><span class="impact-number">~28k</span><span class="impact-label">Monthly active YES Genie users</span></div>
+              <div class="impact-card"><span class="impact-number">~14k</span><span class="impact-label">Daily leads supported through CRM capabilities</span></div>
+              <div class="impact-card"><span class="impact-number">70+</span><span class="impact-label">Reporting workflows automated across BI tools</span></div>
             </div>
           </section>
 
@@ -814,8 +684,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">Yes Bank Ltd<span>Assistant Vice President | Digital Product Manager</span></h3>
-                <span class="date-pill">May’22 to Present</span>
+                <h3 class="company-title">Yes Bank Ltd | Assistant Vice President | Digital Product Manager</h3>
+                <span class="date-range">May’22 to Present</span>
               </div>
               <ul class="bullet-list">
                 <li>Supported roadmap, prioritization and requirement-to-delivery execution for YES Genie, the bank’s in-house Enterprise CRM platform used by approximately 28,000 monthly active users across 1,000 branches and 50 business units.</li>
@@ -830,8 +700,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">Kotak Mahindra Prime Pvt Ltd<span>Senior Manager | Analytics Lead</span></h3>
-                <span class="date-pill">Dec’20 to May’22</span>
+                <h3 class="company-title">Kotak Mahindra Prime Pvt Ltd | Senior Manager | Analytics Lead</h3>
+                <span class="date-range">Dec’20 to May’22</span>
               </div>
               <ul class="bullet-list">
                 <li>Automated 20+ business-critical reports in SAP BO and led a team to automate 50+ additional reports, reducing manual effort by approximately 3 FTEs.</li>
@@ -841,8 +711,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">Volkswagen Financial Services Pvt Ltd<span>Deputy Manager | Risk Management</span></h3>
-                <span class="date-pill">Jan’17 to Dec’20</span>
+                <h3 class="company-title">Volkswagen Financial Services Pvt Ltd | Deputy Manager | Risk Management</h3>
+                <span class="date-range">Jan’17 to Dec’20</span>
               </div>
               <ul class="bullet-list">
                 <li>Collaborated with German HQ and local stakeholders to standardize risk reporting workflows across regulatory and management reporting requirements.</li>
@@ -853,8 +723,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">State Street Syntel Pvt Ltd<span>Deputy Manager | Digital Transformation</span></h3>
-                <span class="date-pill">Dec’15 to Jan’17</span>
+                <h3 class="company-title">State Street Syntel Pvt Ltd | Deputy Manager | Digital Transformation</h3>
+                <span class="date-range">Dec’15 to Jan’17</span>
               </div>
               <ul class="bullet-list">
                 <li>Developed an Excel-based SOP keyword search tool to reduce manual search effort.</li>
@@ -864,8 +734,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">Kotak Mahindra Prime / Kotak Mahindra Bank Ltd<span>Deputy Manager | Risk Management &amp; MIS</span></h3>
-                <span class="date-pill">Dec’10 to Nov’15</span>
+                <h3 class="company-title">Kotak Mahindra Prime / Kotak Mahindra Bank Ltd | Deputy Manager | Risk Management &amp; MIS</h3>
+                <span class="date-range">Dec’10 to Nov’15</span>
               </div>
               <ul class="bullet-list">
                 <li>Developed automated MIS and reporting workflows in Pentaho, SQL Server and VBA, reducing manual interventions.</li>
@@ -875,8 +745,8 @@
 
             <div class="role">
               <div class="role-header">
-                <h3 class="role-title">Fullerton India Credit Corporation Limited<span>Risk Management</span></h3>
-                <span class="date-pill">Jun’09 to Nov’10</span>
+                <h3 class="company-title">Fullerton India Credit Corporation Limited | Risk Management</h3>
+                <span class="date-range">Jun’09 to Nov’10</span>
               </div>
               <ul class="bullet-list">
                 <li>Automated MIS reporting in SAS Enterprise Guide after rapid upskilling, improving speed and repeatability of risk reporting.</li>
@@ -885,67 +755,66 @@
           </section>
         </div>
 
-        <aside class="side-column" aria-label="Skills and education">
+        <aside class="side-column" aria-label="Key skills and education">
           <section class="side-card" id="key-skills">
             <h2 class="section-heading">Key Skills</h2>
 
             <div class="skill-group">
-              <h3 class="skill-group-title">Product Management</h3>
-              <div class="skill-tags">
-                <span class="tag">Digital Product Management</span>
-                <span class="tag">CRM Platforms</span>
-                <span class="tag">Product Roadmap</span>
-                <span class="tag">STP Journeys</span>
-                <span class="tag">BRD / FRD</span>
-                <span class="tag">User Journey Design</span>
-                <span class="tag">Agile Delivery</span>
-                <span class="tag">UAT</span>
-                <span class="tag">Go-live Planning</span>
-                <span class="tag">Stakeholder Management</span>
-              </div>
+              <h3 class="skill-title">Product Management</h3>
+              <ul class="chip-list">
+                <li>Digital Product Management</li>
+                <li>Enterprise CRM Platforms</li>
+                <li>Product Roadmap</li>
+                <li>STP Journeys</li>
+                <li>BRD / FRD</li>
+                <li>User Journey Design</li>
+                <li>Agile Delivery</li>
+                <li>UAT</li>
+                <li>Go-live Planning</li>
+                <li>Stakeholder Management</li>
+              </ul>
             </div>
 
             <div class="skill-group">
-              <h3 class="skill-group-title">Banking &amp; Financial Services</h3>
-              <div class="skill-tags">
-                <span class="tag">Customer Servicing</span>
-                <span class="tag">Lead Management</span>
-                <span class="tag">Contact Center CRM</span>
-                <span class="tag">Retail Banking</span>
-                <span class="tag">Risk Management</span>
-                <span class="tag">Regulatory Reporting</span>
-                <span class="tag">RBI Reporting</span>
-                <span class="tag">IFRS 9</span>
-                <span class="tag">IND-AS</span>
-              </div>
+              <h3 class="skill-title">Banking &amp; Financial Services</h3>
+              <ul class="chip-list">
+                <li>Customer Servicing</li>
+                <li>Lead Management</li>
+                <li>Contact Center CRM</li>
+                <li>Retail Banking</li>
+                <li>Risk Management</li>
+                <li>Regulatory Reporting</li>
+                <li>RBI Reporting</li>
+                <li>IFRS 9</li>
+                <li>IND-AS</li>
+              </ul>
             </div>
 
             <div class="skill-group">
-              <h3 class="skill-group-title">Data &amp; Analytics</h3>
-              <div class="skill-tags">
-                <span class="tag">SQL</span>
-                <span class="tag">SAS Enterprise Guide</span>
-                <span class="tag">SAS VA</span>
-                <span class="tag">SAP BO</span>
-                <span class="tag">Pentaho</span>
-                <span class="tag">Excel VBA</span>
-                <span class="tag">Access VBA</span>
-                <span class="tag">Python</span>
-                <span class="tag">MDX</span>
-              </div>
+              <h3 class="skill-title">Data &amp; Analytics</h3>
+              <ul class="chip-list">
+                <li>SQL</li>
+                <li>SAS</li>
+                <li>SAP BO</li>
+                <li>Pentaho</li>
+                <li>Excel VBA</li>
+                <li>Access VBA</li>
+                <li>Python</li>
+                <li>MDX</li>
+              </ul>
             </div>
 
             <div class="skill-group">
-              <h3 class="skill-group-title">Technology Understanding</h3>
-              <div class="skill-tags">
-                <span class="tag">API Integrations</span>
-                <span class="tag">Data Pipelines</span>
-                <span class="tag">SQL Server</span>
-                <span class="tag">Hadoop</span>
-                <span class="tag">BI Dashboards</span>
-                <span class="tag">Automation</span>
-                <span class="tag">Enterprise System Integrations</span>
-              </div>
+              <h3 class="skill-title">Technology Understanding</h3>
+              <ul class="chip-list">
+                <li>API Integrations</li>
+                <li>Data Pipelines</li>
+                <li>SQL Server</li>
+                <li>Hadoop</li>
+                <li>BI Dashboards</li>
+                <li>Automation</li>
+                <li>Enterprise System Integrations</li>
+              </ul>
             </div>
           </section>
 
@@ -957,6 +826,7 @@
         </aside>
       </div>
     </article>
+
   </main>
 </body>
 </html>
