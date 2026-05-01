@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Resume website for a Product Manager specializing in Enterprise Banking CRM, Lead Management, STP Journeys, API Integrations, Analytics and Automation." />
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #5b667a;
+      --muted-2: #778195;
+      --line: #d7deea;
+      --soft-line: #e8edf5;
+      --navy: #0b1f3a;
+      --blue: #174a7c;
+      --blue-soft: #eaf2fb;
+      --gold: #b8860b;
+      --card: #f8fafd;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(23, 74, 124, 0.16), transparent 32rem),
+        linear-gradient(135deg, #f7f9fc 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 44px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .button {
+      appearance: none;
+      border: 1px solid rgba(23, 74, 124, 0.25);
+      background: #ffffff;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 750;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      outline: none;
+      border-color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .resume {
+      background: var(--paper);
+      border: 1px solid rgba(215, 222, 234, 0.9);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .resume-header {
+      position: relative;
+      padding: 42px 54px 34px;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(11, 31, 58, 0.96), rgba(23, 74, 124, 0.96)),
+        linear-gradient(90deg, var(--navy), var(--blue));
+    }
+
+    .resume-header::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), rgba(255, 255, 255, 0.45), transparent);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .candidate-name {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.04;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+
+    .headline {
+      max-width: 900px;
+      margin: 13px 0 0;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+    }
+
+    .contact-line span:not(:last-child)::after {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin-left: 14px;
+      vertical-align: middle;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .resume-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 34px;
+      padding: 38px 54px 46px;
+    }
+
+    .main-column,
+    .side-column {
+      min-width: 0;
+    }
+
+    .section {
+      margin: 0 0 30px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 15px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-heading::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .summary-card {
+      margin: 0;
+      padding: 18px 20px;
+      border: 1px solid var(--soft-line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #ffffff, #f9fbfe);
+      color: #263247;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .impact-card {
+      padding: 13px 12px;
+      border: 1px solid var(--soft-line);
+      border-radius: var(--radius-sm);
+      background: var(--card);
+    }
+
+    .impact-number {
+      display: block;
+      color: var(--blue);
+      font-size: 19px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .impact-label {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.32;
+      font-weight: 700;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullet-list li {
+      position: relative;
+      margin: 0 0 11px;
+      padding-left: 19px;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-soft);
+    }
+
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .role {
+      position: relative;
+      padding: 0 0 24px 24px;
+      border-left: 2px solid var(--soft-line);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .role:last-child {
+      padding-bottom: 0;
+    }
+
+    .role::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px var(--blue-soft);
+    }
+
+    .role-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: start;
+      margin-bottom: 9px;
+    }
+
+    .role-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.28;
+      font-weight: 850;
+    }
+
+    .role-title span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .side-card {
+      margin-bottom: 22px;
+      padding: 18px;
+      border: 1px solid var(--soft-line);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .side-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .side-card .section-heading {
+      margin-bottom: 13px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .side-card .section-heading::before {
+      width: 22px;
+    }
+
+    .skill-group {
+      margin-bottom: 16px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-title {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 12.5px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 8px;
+      border: 1px solid #dfe6f1;
+      border-radius: 999px;
+      background: #f8fafd;
+      color: #334158;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 650;
+    }
+
+    .education-item {
+      margin: 0 0 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .education-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .education-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .print-note {
+      margin: 16px auto 0;
+      color: var(--muted-2);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .site-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .toolbar,
+      .print-note {
+        display: none;
+      }
+
+      .resume {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .resume-header,
+      .resume-body {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .resume-body {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      body {
+        font-size: 14px;
+      }
+
+      .resume-header {
+        padding-top: 32px;
+      }
+
+      .contact-line {
+        display: block;
+      }
+
+      .contact-line span {
+        display: block;
+        margin-top: 5px;
+      }
+
+      .contact-line span:not(:last-child)::after {
+        display: none;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .role-header {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .date-pill {
+        justify-self: start;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --paper: #ffffff;
+        --ink: #111827;
+        --muted: #374151;
+        --line: #cbd5e1;
+        --soft-line: #d9dee8;
+        --blue: #0f3f6f;
+        --blue-soft: #ffffff;
+        --card: #ffffff;
+        --shadow: none;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm 11mm;
+      }
+
+      html,
+      body {
+        width: 210mm;
+        min-height: 297mm;
+        background: #ffffff !important;
+      }
+
+      body {
+        font-size: 10.6px;
+        line-height: 1.32;
+        color: #111827;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .site-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .toolbar,
+      .print-note {
+        display: none !important;
+      }
+
+      .resume {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+      }
+
+      .resume-header {
+        padding: 0 0 9px;
+        color: #111827;
+        background: #ffffff !important;
+        border-bottom: 2px solid #0f3f6f;
+      }
+
+      .resume-header::after {
+        display: none;
+      }
+
+      .eyebrow {
+        display: none;
+      }
+
+      .candidate-name {
+        color: #111827;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.06em;
+      }
+
+      .headline {
+        margin: 5px auto 0;
+        max-width: none;
+        color: #0f3f6f;
+        text-align: center;
+        font-size: 10.6px;
+        font-weight: 750;
+      }
+
+      .contact-line {
+        display: block;
+        margin-top: 4px;
+        color: #374151;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .contact-line span {
+        display: inline;
+      }
+
+      .contact-line span:not(:last-child)::after {
+        content: " | ";
+        display: inline;
+        width: auto;
+        height: auto;
+        margin-left: 6px;
+        color: #6b7280;
+        background: transparent;
+        border-radius: 0;
+      }
+
+      .resume-body {
+        display: block;
+        padding: 11px 0 0;
+      }
+
+      .main-column,
+      .side-column {
+        width: 100%;
+      }
+
+      .section,
+      .side-card {
+        margin-bottom: 10px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: #ffffff;
+        box-shadow: none;
+      }
+
+      .section-heading,
+      .side-card .section-heading {
+        display: block;
+        margin: 0 0 5px;
+        padding: 4px 6px;
+        border-top: 1px solid #cbd5e1;
+        border-bottom: 1px solid #cbd5e1;
+        background: #f4f6f9;
+        color: #111827;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+
+      .section-heading::before,
+      .side-card .section-heading::before {
+        display: none;
+      }
+
+      .summary-card {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: #ffffff;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+        margin-top: 7px;
+      }
+
+      .impact-card {
+        padding: 5px 5px;
+        border: 1px solid #d9dee8;
+        border-radius: 0;
+        background: #ffffff;
+      }
+
+      .impact-number {
+        color: #111827;
+        font-size: 11.2px;
+      }
+
+      .impact-label {
+        margin-top: 2px;
+        color: #374151;
+        font-size: 8.8px;
+        line-height: 1.16;
+      }
+
+      .bullet-list li {
+        margin-bottom: 4.3px;
+        padding-left: 12px;
+      }
+
+      .bullet-list li::before {
+        top: 0.55em;
+        width: 3.5px;
+        height: 3.5px;
+        box-shadow: none;
+        background: #111827;
+      }
+
+      .role {
+        padding: 0 0 7px 0;
+        border-left: 0;
+      }
+
+      .role::before {
+        display: none;
+      }
+
+      .role-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin-bottom: 3px;
+      }
+
+      .role-title {
+        font-size: 10.7px;
+        line-height: 1.2;
+      }
+
+      .role-title span {
+        display: inline;
+        color: #111827;
+        font-size: 10.7px;
+      }
+
+      .role-title span::before {
+        content: " | ";
+        color: #6b7280;
+      }
+
+      .date-pill {
+        min-height: 0;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #374151;
+        font-size: 9.8px;
+      }
+
+      .side-column {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .skill-group {
+        margin-bottom: 5px;
+      }
+
+      .skill-group-title {
+        display: inline;
+        margin: 0;
+        font-size: 9.7px;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .skill-tags {
+        display: inline;
+      }
+
+      .tag {
+        display: inline;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #111827;
+        font-size: 9.7px;
+        font-weight: 500;
+      }
+
+      .tag:not(:last-child)::after {
+        content: ", ";
+      }
+
+      .education-item {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .education-item + .education-item::before {
+        content: " | ";
+      }
+
+      .education-item strong,
+      .education-item span {
+        display: inline;
+        color: #111827;
+        font-size: 9.8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="site-shell">
+    <div class="toolbar" aria-label="Resume actions">
+    </div>
+
+    <article class="resume" aria-label="Resume">
+      <header class="resume-header">
+        <h1 class="candidate-name">Rahul Umesh Sanil</h1>
+        <p class="headline">Product Manager - Enterprise Banking CRM | Lead Management | STP Journeys | API Integrations | Analytics &amp; Automation</p>
+        <p class="contact-line">
+          <span>9867101139</span>
+	  <span><a href="mailto:rahulsanil@gmail.com">rahulsanil@gmail.com</a></span>
+          <span><a href="https://rahulsanil.github.io">rahulsanil.github.io</a></span>
+        </p>
+      </header>
+
+      <div class="resume-body">
+        <div class="main-column">
+          <section class="section" id="executive-summary">
+            <p class="summary-card">Product Manager specializing in Enterprise Banking CRM, with 15+ years of experience across banking, NBFC, digital journeys, analytics, BI automation and regulatory reporting. Currently contributing to roadmap, prioritization and delivery for YES Genie, YES Bank’s in-house Enterprise CRM platform used by approximately 28,000 monthly active users across 1,000 branches and 50 business units. Experienced in lead management, customer servicing, STP journeys, API integrations, dashboards, UAT, go-live support and post-launch adoption tracking. Strong background in SQL, SAS, SAP BO, automation and data-driven product delivery.</p>
+
+            <div class="impact-grid" aria-label="Resume impact metrics">
+              <div class="impact-card"><span class="impact-number">15+ yrs</span><span class="impact-label">Banking, CRM, analytics and reporting</span></div>
+              <div class="impact-card"><span class="impact-number">~28K</span><span class="impact-label">YES Genie monthly active users</span></div>
+              <div class="impact-card"><span class="impact-number">~1,000</span><span class="impact-label">Branches supported</span></div>
+              <div class="impact-card"><span class="impact-number">~50</span><span class="impact-label">Business units enabled</span></div>
+              <div class="impact-card"><span class="impact-number">70+</span><span class="impact-label">Reporting workflows automated</span></div>
+            </div>
+          </section>
+
+          <section class="section" id="career-highlights">
+            <h2 class="section-heading">Career Highlights</h2>
+            <ul class="bullet-list">
+              <li>Support roadmap, prioritization and delivery for YES Genie, an enterprise banking CRM platform used by approximately 28,000 monthly active users across 1,000 branches and 50 business units.</li>
+              <li>Enable digital banking and CRM capabilities across lead management, customer servicing, STP sales journeys, API integrations, dashboards and enterprise system integrations.</li>
+              <li>Deliver measurable business impact across Premium Rupee Plan, Debit Card Upgrade, Credit Card EMI and Mutual Fund Purchase journeys, supporting annual business volume, billed value, EMI conversion and investment outcomes.</li>
+              <li>Automated 70+ reporting workflows across SAP BO, SAS, Pentaho, SQL and VBA environments, improving reporting accuracy, turnaround time and control processes.</li>
+            </ul>
+          </section>
+
+          <section class="section" id="work-experience">
+            <h2 class="section-heading">Work Experience</h2>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">Yes Bank Ltd<span>Assistant Vice President | Digital Product Manager</span></h3>
+                <span class="date-pill">May’22 to Present</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Supported roadmap, prioritization and requirement-to-delivery execution for YES Genie, the bank’s in-house Enterprise CRM platform used by approximately 28,000 monthly active users across 1,000 branches and 50 business units.</li>
+                <li>Enabled enterprise lead management capabilities supporting approximately 14,000 daily leads, including nearly 10,000 user-generated leads and 4,000 API-created leads from partner, campaign, contact center, internal system and digital channel integrations.</li>
+                <li>Supported migration of Sales CRM from Microsoft Dynamics 365 to YES Genie, ensuring alignment of business workflows, internal applications and CRM capabilities.</li>
+                <li>Improved lead management visibility through status tracking, assignment monitoring, follow-up tracking, conversion visibility and escalation triggers for unactioned leads.</li>
+                <li>Delivered BRDs, functional specifications, journey flows, UAT scenarios, production validation, go-live support and post-launch adoption tracking for digital banking and CRM use cases.</li>
+                <li>Enabled STP journeys across Premium Rupee Plan, Debit Card Upgrade, Credit Card EMI and Mutual Fund Purchase, supporting annual business outcomes including INR 600 Cr PRP business volume, INR 6.5 Cr debit card billed amount, INR 70 Cr credit card EMI conversion value and INR 40 Cr mutual fund investment value.</li>
+                <li>Reviewed screen flows, user stories, test cases, SOPs and training material to ensure alignment with business requirements, user journeys and operational processes.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">Kotak Mahindra Prime Pvt Ltd<span>Senior Manager | Analytics Lead</span></h3>
+                <span class="date-pill">Dec’20 to May’22</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Automated 20+ business-critical reports in SAP BO and led a team to automate 50+ additional reports, reducing manual effort by approximately 3 FTEs.</li>
+                <li>Designed senior management dashboards for portfolio, risk and business performance tracking, improving visibility and decision-making cadence.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">Volkswagen Financial Services Pvt Ltd<span>Deputy Manager | Risk Management</span></h3>
+                <span class="date-pill">Jan’17 to Dec’20</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Collaborated with German HQ and local stakeholders to standardize risk reporting workflows across regulatory and management reporting requirements.</li>
+                <li>Automated Expected Credit Loss calculation workflows in SAS for IFRS 9 and IND-AS reporting, improving execution accuracy and audit readiness.</li>
+                <li>Published portfolio analytics covering PD, LGD, vintage analysis, delinquency, RBI reporting and credit risk metrics.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">State Street Syntel Pvt Ltd<span>Deputy Manager | Digital Transformation</span></h3>
+                <span class="date-pill">Dec’15 to Jan’17</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Developed an Excel-based SOP keyword search tool to reduce manual search effort.</li>
+                <li>Automated back-office processes using Excel VBA and Access, improving turnaround time and operational consistency.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">Kotak Mahindra Prime / Kotak Mahindra Bank Ltd<span>Deputy Manager | Risk Management &amp; MIS</span></h3>
+                <span class="date-pill">Dec’10 to Nov’15</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Developed automated MIS and reporting workflows in Pentaho, SQL Server and VBA, reducing manual interventions.</li>
+                <li>Maintained SQL Server databases for analytics, portfolio reporting and risk MIS.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-header">
+                <h3 class="role-title">Fullerton India Credit Corporation Limited<span>Risk Management</span></h3>
+                <span class="date-pill">Jun’09 to Nov’10</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Automated MIS reporting in SAS Enterprise Guide after rapid upskilling, improving speed and repeatability of risk reporting.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <aside class="side-column" aria-label="Skills and education">
+          <section class="side-card" id="key-skills">
+            <h2 class="section-heading">Key Skills</h2>
+
+            <div class="skill-group">
+              <h3 class="skill-group-title">Product Management</h3>
+              <div class="skill-tags">
+                <span class="tag">Digital Product Management</span>
+                <span class="tag">CRM Platforms</span>
+                <span class="tag">Product Roadmap</span>
+                <span class="tag">STP Journeys</span>
+                <span class="tag">BRD / FRD</span>
+                <span class="tag">User Journey Design</span>
+                <span class="tag">Agile Delivery</span>
+                <span class="tag">UAT</span>
+                <span class="tag">Go-live Planning</span>
+                <span class="tag">Stakeholder Management</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group-title">Banking &amp; Financial Services</h3>
+              <div class="skill-tags">
+                <span class="tag">Customer Servicing</span>
+                <span class="tag">Lead Management</span>
+                <span class="tag">Contact Center CRM</span>
+                <span class="tag">Retail Banking</span>
+                <span class="tag">Risk Management</span>
+                <span class="tag">Regulatory Reporting</span>
+                <span class="tag">RBI Reporting</span>
+                <span class="tag">IFRS 9</span>
+                <span class="tag">IND-AS</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group-title">Data &amp; Analytics</h3>
+              <div class="skill-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">SAS Enterprise Guide</span>
+                <span class="tag">SAS VA</span>
+                <span class="tag">SAP BO</span>
+                <span class="tag">Pentaho</span>
+                <span class="tag">Excel VBA</span>
+                <span class="tag">Access VBA</span>
+                <span class="tag">Python</span>
+                <span class="tag">MDX</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group-title">Technology Understanding</h3>
+              <div class="skill-tags">
+                <span class="tag">API Integrations</span>
+                <span class="tag">Data Pipelines</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Hadoop</span>
+                <span class="tag">BI Dashboards</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Enterprise System Integrations</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="side-card" id="education">
+            <h2 class="section-heading">Education</h2>
+            <p class="education-item"><strong>B.Sc. Mathematics</strong><span>Jai Hind College, Mumbai</span></p>
+            <p class="education-item"><strong>GNIIT</strong><span>2-year IT Program - NIIT Institute</span></p>
+          </section>
+        </aside>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
